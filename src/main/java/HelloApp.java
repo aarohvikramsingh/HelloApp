@@ -4,19 +4,16 @@ public class HelloApp {
             System.out.println("Hello, World!");
         } else {
             StringBuilder names = new StringBuilder();
-            int count = 0; // Keeping track to avoid a trailing comma
 
-            // The Enhanced For Loop
+            // Append every name with a comma and space
             for (String name : args) {
-                names.append(name);
-                count++;
-
-                // Add a comma and space if it's not the last name
-                if (count < args.length) {
-                    names.append(", ");
-                }
+                names.append(name).append(", ");
             }
-            System.out.println("Hello, " + names.toString() + "!");
+
+            // Remove the final trailing comma and space (the last 2 characters)
+            String finalNames = names.substring(0, names.length() - 2);
+
+            System.out.println("Hello, " + finalNames + "!");
         }
     }
 }
